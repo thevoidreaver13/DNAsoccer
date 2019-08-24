@@ -36,19 +36,23 @@ function signUp() {
 }
 
 function signIn() {
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    var auth = firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        if (errorCode === 'auth/wrong-password') {
-            alert('รหัสผ่านไม่ถูกต้อง');
-        } else {
-            alert(errorMessage);
-        }
-        console.log(error);
-    });
-    console.log(auth);
+    console.log("SignIn Data")
+    var email = document.getElementById('emailSig').value;
+    var password = document.getElementById('passwordSig').value;
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(() => {
+            alert("เข้าสู่ระบบสำเร็จ")
+        })
+        .catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode === 'auth/wrong-password') {
+                alert('รหัสผ่านไม่ถูกต้อง');
+            } else {
+                alert(errorMessage);
+            }
+            console.log(error);
+        });
 }
 
 function logout() {

@@ -198,28 +198,28 @@
               </button>
                 </div>
                 <div class="modal-body">
-                    <form role="form" method="post" id="login" name="contact-form" data-toggle="validator">
-                        <div class="row">
-                            <div class="col-md-6 form-line">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required data-error="กรุณาใส่Email">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 form-line">
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required data-error="กรุณาใส่รหัสผ่าน">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-submit">
-                                    <button type="submit" class="btn btn-common" id="submit" onclick="signIn()">เข้าสู่ระบบ </button>
-                                    <div id="Submit" class="h3 text-center hidden"></div>
-                                </div>
+
+                    <div class="row">
+                        <div class="col-md-6 form-line">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="emailSig" name="emailSig" placeholder="Email" required data-error="กรุณาใส่Email">
+                                <div class="help-block with-errors"></div>
                             </div>
                         </div>
-                    </form>
+                        <div class="col-md-6 form-line">
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="passwordSig" name="passwordSig" placeholder="Password" required data-error="กรุณาใส่รหัสผ่าน">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-submit">
+                                <button type="submit" class="btn btn-common" id="submit" onclick="signIn()">เข้าสู่ระบบ </button>
+                                <div id="Submit" class="h3 text-center hidden"></div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <div class="col-md-7 float-left">
@@ -246,36 +246,36 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="form-group row">
-                            <label for="Email" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" placeholder="Email">
-                            </div>
+
+                    <div class="form-group row">
+                        <label for="Email" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" placeholder="Email">
                         </div>
-                        <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="password" placeholder="Password">
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" placeholder="Password">
                         </div>
-                        <div class="form-group row">
-                            <label for="FullName" class="col-sm-2 col-form-label">ชื่อ - นามสกุล</label>
-                            <div class="col-sm-10">
-                                <input type="FullName" class="form-control" id="name" placeholder="ชื่อ-นามสกุลจริง">
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="FullName" class="col-sm-2 col-form-label">ชื่อ - นามสกุล</label>
+                        <div class="col-sm-10">
+                            <input type="FullName" class="form-control" id="name" placeholder="ชื่อ-นามสกุลจริง">
                         </div>
-                        <div class="form-group row">
-                            <label for="Number" class="col-sm-2 col-form-label">เบอร์โทรศัพท์</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" id="phone" placeholder="เบอร์โทรศัพท์">
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Number" class="col-sm-2 col-form-label">เบอร์โทรศัพท์</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="phone" placeholder="เบอร์โทรศัพท์">
                         </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">ที่อยู่ปัจจุบัน:</label>
-                            <textarea class="form-control" id="address"></textarea>
-                        </div>
-                    </form>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">ที่อยู่ปัจจุบัน:</label>
+                        <textarea class="form-control" id="address"></textarea>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
@@ -1157,7 +1157,7 @@
                         <div class="newsletter-wrapper">
                             <form method="post" id="subscribe-form" name="subscribe-form" class="validate">
                                 <div class="form-group is-empty">
-                                    <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Your email" required="">
+                                    <input type="email" value="" name="Email" class="form-control" id="emailSub" placeholder="Your email" required="">
                                     <button type="submit" name="subscribe" id="subscribes" class="btn btn-common sub-btn"><i class="lni-pointer"></i></button>
                                     <div class="clearfix"></div>
                                 </div>
