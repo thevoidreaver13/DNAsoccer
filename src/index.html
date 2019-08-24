@@ -88,6 +88,11 @@
                   Login
                 </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="logout()">
+                  Logout
+                </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -193,23 +198,23 @@
               </button>
                 </div>
                 <div class="modal-body">
-                    <form role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
+                    <form role="form" method="post" id="login" name="contact-form" data-toggle="validator">
                         <div class="row">
                             <div class="col-md-6 form-line">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="name" placeholder="Name" required data-error="กรุณาใส่ชื่อผู้ใช้">
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required data-error="กรุณาใส่Email">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-6 form-line">
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="password" placeholder="Password" required data-error="กรุณาใส่รหัสผ่าน">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required data-error="กรุณาใส่รหัสผ่าน">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-submit">
-                                    <button type="submit" class="btn btn-common" id="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i> เข้าสู่ระบบ </button>
+                                    <button type="submit" class="btn btn-common" id="submit" onclick="signIn()">เข้าสู่ระบบ </button>
                                     <div id="Submit" class="h3 text-center hidden"></div>
                                 </div>
                             </div>

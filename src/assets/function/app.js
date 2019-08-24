@@ -17,26 +17,42 @@ function insertData(email, password, name, phone, address) {
         address: address
     });
     console.log("Register Success");
+    signUp();
 }
 
-
-
-
-
-
-
-
-window.onload = function() {
-    var firebase = firebase.database().ref("User");
-    firebaseRef.once('value').then(function(dataSnapshot) {
-        console.log(dataSnapshot.key());
+function signUp() {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode === 'auth/weak-password') {
+            alert('รหัสผ่านไม่ถูกต้อง');
+        } else {
+            alert(errorMessage);
+        }
+        console.log(error);
     });
-    showData();
 }
 
-function showData() {
-    var firebase = firebase.database().ref("Member");
-    firebaseRef.once('value').then(function(dataSnapshot) {
-        console.log(dataSnapshot.val());
+function signIn() {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var auth = firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode === 'auth/wrong-password') {
+            alert('รหัสผ่านไม่ถูกต้อง');
+        } else {
+            alert(errorMessage);
+        }
+        console.log(error);
     });
+    console.log(auth);
+}
+
+function logout() {
+    firebase
+        .auth()
+        .signOut();
 }
