@@ -8,7 +8,7 @@ function saveOnClick() {
 }
 
 function insertData(email, password, name, phone, address) {
-    var firebaseRef = firebase.database().ref('Member');
+    var firebaseRef = firebase.database().ref();
     firebaseRef.push({
         email: email,
         password: password,
@@ -17,4 +17,26 @@ function insertData(email, password, name, phone, address) {
         address: address
     });
     console.log("Register Success");
+}
+
+
+
+
+
+
+
+
+window.onload = function() {
+    var firebase = firebase.database().ref("User");
+    firebaseRef.once('value').then(function(dataSnapshot) {
+        console.log(dataSnapshot.key());
+    });
+    showData();
+}
+
+function showData() {
+    var firebase = firebase.database().ref("Member");
+    firebaseRef.once('value').then(function(dataSnapshot) {
+        console.log(dataSnapshot.val());
+    });
 }
