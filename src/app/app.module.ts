@@ -7,6 +7,9 @@ import { AngularFireModule} from 'angularfire2';
 import { firebaseConfig } from './../environments/firebase.config';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+import { Routes, RouterModule } from '@angular/router';
+const appRoutes: Routes = [];
+
 @NgModule({
   declarations: [
     AppComponent
@@ -15,9 +18,11 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-   AngularFireDatabaseModule
+   AngularFireDatabaseModule,
+   RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
