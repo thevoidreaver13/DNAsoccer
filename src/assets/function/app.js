@@ -53,6 +53,7 @@ function signIn() {
             }
             console.log(error);
         });
+    location.href = "index.html";
 }
 
 function logout() {

@@ -8,11 +8,14 @@ import { firebaseConfig } from './../environments/firebase.config';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { Routes, RouterModule } from '@angular/router';
-const appRoutes: Routes = [];
-
+import { HomeComponent } from './home/home.component';
+const appRoutes: Routes = [
+  {path: '', component: HomeComponent} // default หน้าแรก
+];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
