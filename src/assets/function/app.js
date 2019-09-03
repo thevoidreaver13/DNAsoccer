@@ -16,7 +16,6 @@ function insertData(email, password, name, phone, address) {
         phone: phone,
         address: address
     });
-    console.log("Register Success");
     signUp();
 }
 
@@ -27,12 +26,13 @@ function signUp() {
         var errorCode = error.code;
         var errorMessage = error.message;
         if (errorCode === 'auth/weak-password') {
-            alert('รหัสผ่านไม่ถูกต้อง');
+            alert('สมัครบริการเรียบร้อย');
         } else {
             alert(errorMessage);
         }
         console.log(error);
     });
+    console.log("Register Success");
 }
 
 function signIn() {
@@ -41,7 +41,8 @@ function signIn() {
     var password = document.getElementById('passwordSig').value;
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(() => {
-            alert("เข้าสู่ระบบสำเร็จ")
+            alert("เข้าสู่ระบบสำเร็จ");
+            location.replace("http://localhost:4200/user");
         })
         .catch(function(error) {
             var errorCode = error.code;
@@ -51,9 +52,9 @@ function signIn() {
             } else {
                 alert(errorMessage);
             }
-            console.log(error);
         });
-    location.href = "index.html";
+    console.log("Login Success");
+
 }
 
 function logout() {

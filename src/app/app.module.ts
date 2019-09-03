@@ -3,29 +3,34 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AngularFireModule} from 'angularfire2';
-import { firebaseConfig } from './../environments/firebase.config';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-
-import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent} // default หน้าแรก
+import { NavbarComponent } from './navbar/navbar.component';
+import { NavoutComponent } from './navout/navout.component';
+import { UserComponent } from './user/user.component';
+import { PublicComponent } from './public/public.component';
+import { Routes, RouterModule } from '@angular/router';
+
+const appRoutes: Routes = [  
+  {path: 'user', component: UserComponent},
+  {path: '', component: PublicComponent}
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent,
+    NavoutComponent,
+    UserComponent,
+    PublicComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-   AngularFireDatabaseModule,
-   RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
+  entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
