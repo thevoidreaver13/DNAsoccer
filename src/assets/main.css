@@ -1001,7 +1001,7 @@ a.back-to-top:focus {
 /* Schedule Area */
 
 #schedules {
-    background: #f3f4f3;
+    background: #0d0625;
 }
 
 #schedule-tab {
@@ -1075,7 +1075,7 @@ a.back-to-top:focus {
 }
 
 .schedule .show .card-body {
-    background: #f3f4f3;
+    background: #424250;
 }
 
 .schedule .card-header {

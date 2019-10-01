@@ -9,6 +9,7 @@ import { NavoutComponent } from './navout/navout.component';
 import { UserComponent } from './user/user.component';
 import { PublicComponent } from './public/public.component';
 import { Routes, RouterModule } from '@angular/router';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [  
   {path: 'user', component: UserComponent},
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     NavoutComponent,
     UserComponent,
-    PublicComponent
+    PublicComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
