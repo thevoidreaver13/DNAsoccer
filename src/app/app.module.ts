@@ -12,6 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [  
+  {path: 'profile', component: ProfileComponent},
   {path: 'user', component: UserComponent},
   {path: '', component: PublicComponent}
 ];
